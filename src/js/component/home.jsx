@@ -18,11 +18,18 @@ const Home = () => {
 		[0,0,0,0,0,0,0,0,0,0]
 	]);
 
+	const modificarTablero = (position) => {
+		const [position1,position2] = position
+		tablero[position1][position2]=1
+		setTablero([...tablero])
+
+
+	}
 	return (
 		<>
 		<h2 className="text-center">Battleship</h2>
 		<div className="tablero">
-			{tablero.map((position) => position.map((number) => <div className="cuadros"></div>))}
+			{tablero.map((position,index) => position.map((number,index2) => <div key={`${index}${index2}`} className={tablero[index][index2]==1 ? "shot cuadros":"cuadros"} onClick={(e) => modificarTablero([index,index2])}></div>))}
 		</div>
 		</>
 	);
