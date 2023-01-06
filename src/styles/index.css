@@ -32,8 +32,14 @@ body{
     background-color: aquamarine;
 }
 
+.misfire{
+    background-color: gray;
+}
+
 .shot{
     background-color: red;
 }
+
+
 
 
